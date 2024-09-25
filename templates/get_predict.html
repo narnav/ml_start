@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+    <h1>Get Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="feature">Feature:</label>
+        <input type="number" id="feature" name="feature" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    {% endblock %}
